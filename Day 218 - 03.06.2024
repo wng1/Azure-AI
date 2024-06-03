@@ -1,0 +1,12 @@
+https://learn.microsoft.com/en-gb/training/modules/use-prebuilt-form-recognizer-models/?WT.mc_id=cloudskillschallenge_d1db6d81-f56e-4032-8779-b00a75aa762f
+
+Understand the business problem, and identify specific data using pre-built models, then analyse through General Document, Read and Layout models.
+
+Using pre-built models allows you to extract data from common form documents (without having to create your own models).
+
+In order to better understand what is Read, General Document and Layout. Review the following bullet points:
+
+- Read - Extract text and languages from the document.
+- General Document - Extract text, keys, values, entities and selection marks from documents.
+- Layout Models - Extract text and structure information from documents.
+
