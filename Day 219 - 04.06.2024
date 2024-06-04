@@ -1,0 +1,34 @@
+https://learn.microsoft.com/en-gb/training/modules/create-composed-form-recognizer-model/2-understand-composed-models
+https://learn.microsoft.com/en-gb/training/modules/create-composed-form-recognizer-model/4-exercise-model
+
+Composed Model 
+
+1. Business problem - Poll survey - 3 differem form types - use only one single sevice - be able to recognise all three and extract the values
+
+
+// Create an Azure AI Document Intelligence client
+string endpoint = "<endpoint>";
+string apiKey = "<apiKey>";
+var credential = new AzureKeyCredential(apiKey);
+var client = new DocumentAnalysisClient(new Uri(endpoint), credential);
+
+// Specify the model to use
+string modelId = "<modelId>";
+
+// Specify the file to analyze
+Uri fileUri = new Uri("<fileUri>");
+
+// Call the model
+AnalyzeDocumentOperation operation = await client.StartAnalyzeDocumentFromUriAsync(modelId, fileUri);
+
+
+List<string> modelIds = new List<string>()
+{
+    firstCustomModel.ModelId,
+    secondCustomModel.ModelId,
+    thirdCustomModel.ModelId,
+};
+
+BuildModelOperation operation = await client.StartCreateComposedModelAsync(modelIds, modelDescription: "Composed model example");
+Response<DocumentModel> operationResponse = await operation.WaitForCompletionAsync();
+
