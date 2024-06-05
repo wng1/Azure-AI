@@ -1,0 +1,7 @@
+1) Enrich the content by passing through the AI search pioeline 
+2) Build a custom skill that calls an Azure Form Analyzer solution to obtain data from forms (indexing and querying
+
+
+(happens before skillset exec)
+Document cracking > Skillset execution (It might prevent requests from reaching the custom skills) > Output field mapping
+
