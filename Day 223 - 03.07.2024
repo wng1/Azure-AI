@@ -1,0 +1,42 @@
+https://learn.microsoft.com/en-gb/training/modules/sort-filter-queries/6-filter-data
+
+SELECT ProductCategoryID AS Category, ProductName
+FROM Production.Product
+ORDER BY Category ASC, PRICE DESC;
+
+########Limit the sorted results
+TOP will let you specifcy how many rows to return, either as a positive integer or as a percentage of all qualitfying rows.
+SELECT TOP 10 Name, ListPrice
+FROM Production.Product
+ORDER BY ListPrice DESC;
+
+Using WITH TIES
+SELECT TOP 10 WITH TIES Name, ListPrice
+FROM Production.Product
+ORDER BY ListPrice DESC;
+
+USING PERCENT
+SELECT TOP 10 Percent Name, ListPrice
+FROM Production.Product
+ORDER BY ListPrice DESC;
+
+USING OFFSET-FETCH
+SELECT ProductID, ProductName, ListPrice
+FROM Production.Product
+ORDER BY ListPrice DESC 
+OFFSET 10 ROWS --Skip 10 rows
+FETCH NEXT 10 ROWS ONLY; --Get the next 10
+
+SELECT ALL City, CountryRegion
+FROM Production.Supplier
+ORDER BY CountryRegion, City;
+
+DISTINCT (Removes duplicates)
+SELECT DISTINCT City, CountryRegion
+FROM Production.Supplier
+ORDER BY CountryRegion, City;
+
+IS NULL / IS NOT NULL
+SELECT ProductCategoryID AS Category, ProductName
+FROM Production.Product
+WHERE ProductName IS NOT NULL;
