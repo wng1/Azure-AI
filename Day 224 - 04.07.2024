@@ -1,4 +1,6 @@
 https://learn.microsoft.com/en-gb/training/modules/sort-filter-queries/6-filter-data
+https://learn.microsoft.com/en-us/shows/programming-databases-with-t-sql-for-beginners/sort-and-filter-results-in-transact-sql-3-of-7-programming-databases-with-t-sql-for-beginners
+
 
 SELECT ProductCategoryID AS Category, ProductName
 FROM Production.Product
