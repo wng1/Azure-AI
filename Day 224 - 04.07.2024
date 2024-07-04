@@ -1,0 +1,25 @@
+https://learn.microsoft.com/en-gb/training/modules/sort-filter-queries/6-filter-data
+
+SELECT ProductCategoryID AS Category, ProductName
+FROM Production.Product
+WHERE ProductCategoryID = 2
+    OR ProductCategoryID = 3
+    OR ProductCategoryID = 4;
+
+#Using IN is clear and concise, and the performance of the query won't be affected.
+
+SELECT ProductCategoryID AS Category, ProductName
+FROM Production.Product
+WHERE ProductCategoryID IN (2, 3, 4);
+
+#BETWEEN
+BETWEEN is another shortcut that can be used when filtering for an upper and lower bound for the value instead of using two conditions with the AND operator. The following two queries are equivalent:
+
+SELECT ProductCategoryID AS Category, ProductName
+FROM Production.Product
+WHERE ListPrice >= 1.00
+    AND ListPrice <= 10.00;
+
+SELECT ProductCategoryID AS Category, ProductName
+FROM Production.Product
+WHERE ListPrice BETWEEN 1.00 AND 10.00;
