@@ -1,0 +1,28 @@
+https://learn.microsoft.com/en-gb/training/modules/introduction-to-transact-sql/5a-data-types 
+SELECT OrderDate, COUNT(OrderID) AS Orders
+FROM Sales.SalesOrder
+WHERE Status = 'Shipped'
+GROUP BY OrderDate
+HAVING COUNT(OrderID) > 1
+ORDER BY OrderDate DESC;
+
+The CAST function converts a value to a specified data type if the value is compatible with the target data type. An error will be returned if incompatible.
+
+The following query uses CAST to convert the integer values in the ProductID column to varchar values - in order to concatenate them with another character-based-value.
+
+SELECT CAST(ProductID AS varchat(4)) + ': ' + Name AS ProductName
+FROM Production.Product;
+
+====================
+ProductName
+
+680: HL Road Frame - Black, 58
+
+706: HL Road Frame - Red, 58
+
+====================
+COALESCE
+
+Use TRY_CONVERT to convert the value to an integer. If the conversion fails, NULL will be returned.
+
+Use ISNULL to return the specified value when the target column is NULL.
