@@ -10,3 +10,7 @@ ALTER TABLE Data.Membership ALTER COLUMN DiscountCode
 ADD MASKED WITH (FUNCTION = 'random(1, 100)')
  
 GRANT UNMASK to DataOfficers
+
+--------------------------------
+https://learn.microsoft.com/en-gb/training/modules/azure-sql-deploy-configure/6-exercise-configure-database
+
