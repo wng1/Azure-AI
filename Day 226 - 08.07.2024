@@ -1,0 +1,12 @@
+https://learn.microsoft.com/en-gb/training/modules/azure-sql-secure-data/6-data-protection
+
+ALTER TABLE Data.Membership ALTER COLUMN FirstName
+ADD MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)')
+
+ALTER TABLE Data.Membership ALTER COLUMN Email
+ADD MASKED WITH (FUNCTION = 'email()')
+
+ALTER TABLE Data.Membership ALTER COLUMN DiscountCode 
+ADD MASKED WITH (FUNCTION = 'random(1, 100)')
+ 
+GRANT UNMASK to DataOfficers
